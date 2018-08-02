@@ -27,14 +27,14 @@
             {
                 "pagePath": "pages/index/index",
                 "text": "同声传译",
-                "iconPath": "images/info_unselect.png",
-                "selectedIconPath": "images/info_select.png"
+                "iconPath": "images/index_unselect.png",
+                "selectedIconPath": "images/index_select.png"
             },
             {
                 "pagePath": "pages/agenda/agenda",
                 "text": "东盟博览",
-                "iconPath": "images/match_unselect1.png",
-                "selectedIconPath": "images/match_select1.png"
+                "iconPath": "images/info_unselect.png",
+                "selectedIconPath": "images/info_select.png"
             }
         ]
     }
