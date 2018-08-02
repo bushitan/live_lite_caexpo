@@ -1,0 +1,109 @@
+
+@import 'wxss/agenda.wxss';
+@import 'wxss/guest.wxss';
+@import 'wxss/news.wxss';
+
+/* 对齐 */
+.xx_flex{
+    display: flex;
+}
+.xx_flex__center{
+    justify-content: center;
+}
+.xx_flex__between{
+    justify-content: space-between
+}
+.xx_flex__around{
+    justify-content: space-around
+}
+
+.xx_f_11{
+    font-size: 11pt;
+    color: #151515;
+}
+.xx_f_10{
+    font-size: 10pt;
+    color: #151515;
+}
+.xx_f_9{
+    font-size: 9pt;
+    color: #8d8d8d; 
+}
+.xx_f_7{
+    font-size: 8pt;
+    color: #b4b4b4; 
+}
+
+/* 绿色的字 */
+.xx_f_primary{
+    color:#1AAD19 !important;
+}
+/* 华讯的蓝色 */
+.xx_f_hx{
+    color:#187bbf  !important;
+}
+/* 描述的颜色 */
+.xx_f_des{
+    color:#8d8d8d !important;
+}
+/* 描述的颜色 */
+.xx_f_date{
+    color:#b4b4b4 !important;
+}
+
+
+
+/* 外间隔 */
+.xx_m_all15{
+    margin: 15px;
+}
+
+.xx_m_t15{
+    margin-top: 15px;
+}
+
+.xx_m_lr15{
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+.xx_m_b15{
+    margin-bottom: 15px;
+}
+
+.xx_m_t10{
+    margin-top: 10px;
+}
+
+
+.xx_m_t8{
+    margin-top: 8px;
+}
+.xx_m_t6{
+    margin-top: 6px;
+}
+
+.xx_m_t4{
+    margin-top: 4px;
+}
+
+
+
+
+/* 内嵌 */
+.xx_p_all15{
+    padding: 15px;
+}
+
+.xx_p_t15{
+    padding-top: 15px;
+}
+
+.xx_p_lr15{
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.xx_p_b15{
+    padding-bottom: 15px;
+}

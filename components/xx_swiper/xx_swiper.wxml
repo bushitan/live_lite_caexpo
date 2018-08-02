@@ -1,0 +1,16 @@
+<view class="swiper">
+    <swiper  style=' width: {{width}}; height: {{height}};'
+    autoplay="true" interval="5000" duration="1000"
+    indicator-dots="true"
+    indicator-color="rgba(255, 255, 255, .3)" 
+    indicator-active-color="rgba(88, 88, 88, .6)" 
+    circular="true"	>
+        <block wx:for="{{list}}" wx:key="index">
+            <swiper-item>
+                <image  style=' width: {{width}}; height: {{height}};'
+                 src="{{item.cover_url}}"  mode="aspectFit" 
+                catchtap="click" data-index="{{index}}"/>
+            </swiper-item>
+        </block> 
+    </swiper>
+</view> 

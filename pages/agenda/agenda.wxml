@@ -1,0 +1,19 @@
+<view class="page" >
+    <scroll-view class='scroll_view_y'  scroll-y="true" > 
+       <view wx:if='{{isLoading}}'>
+            <!-- 轮播图 -->
+            <swiper-list  list="{{agendaSwiperList}}" catchclick="clickSwiper" width="750rpx" height="322rpx"></swiper-list>
+            <!-- 选择框 -->
+            <view class='tab'>
+                <tab mode="scroll" list="{{tagList}}" catchclick="clickTab" initindex="0" colorselect="#187bbf" ></tab>
+            </view>
+            <!-- 日程 -->
+            <cover mode="agenda" list="{{coverMatrix[tagIndex]}}" catchclick="clickAgenda"></cover>
+        </view>
+        <!-- <image class='ad' src='http://qiniu.308308.com/meet_ad.jpg' mode="aspectFit"></image> -->
+        <image class='ad' src='http://qiniu.308308.com/hx_17_2018_06_07_12_07_18.jpg' mode="widthFix"></image>
+       
+    </scroll-view> 
+</view>
+<!-- <im></im> -->
+

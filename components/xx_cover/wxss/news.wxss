@@ -1,0 +1,50 @@
+
+
+.news{
+    padding: 0 15px;
+    background-color: #fff;
+}
+.news .node{
+    display: flex;
+    justify-content: space-between;
+     padding:  15px 0; 
+}
+.news .left {
+    width: 100%;
+}
+.news .time{
+    font-size: 10pt;
+    color: #888;
+}
+.news .title{
+    font-size: 11pt;
+    color:  #151515;
+    min-height: 35pt;
+}
+.news .summery{
+    font-size: 9pt;
+    color:  #878787;
+    /* margin-top:12px;  */
+}
+.news .time{
+    font-size: 7pt;
+    color:  #8d8d8d;
+    margin-top:12px; 
+}
+.news .cover{
+    margin-left:15px; 
+    width: 100px;
+    height: 75px;
+}
+.news .cover image{
+    width: 100px;
+    height: 75px;
+    background-color: #ECECEC;
+}
+
+
+/*栏目分割线  */
+.news .line__gray{
+    content: "";
+    border-bottom: 1rpx #f0f0f0 solid;
+}

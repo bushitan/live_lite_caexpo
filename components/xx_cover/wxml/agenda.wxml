@@ -1,0 +1,25 @@
+ <template name="mode_agenda"> 
+    <view class="agenda" >
+        <block wx:for="{{coverList}}" wx:key="index" >
+            <view class=' timeline'>
+                <view class='xx_p_t15 xx_p_lr15'>
+                    <view class='xx_flex' style='margin-left:-10px;'>
+                        <view class='point'></view>
+                        <view class='xx_f_10 '>{{item.start_time}}</view>
+                    </view>
+                    <view class='content' catchtap='click' data-index="{{index}}">
+                        <view class='xx_agenda__title'>{{item.title}}</view>
+                        <view class='xx_f_9 xx_m_t6'>{{item.summary}}</view>
+                        <view class='xx_f_7 xx_m_t8'>{{item.start_time}} - {{item.end_time}}  | {{item.des}}</view>
+                    </view>
+                </view>
+            </view>
+        </block>     
+        <view class='xx_p_t15 xx_p_lr15'>
+            <view class='xx_flex' style='margin-left:-10px;'>
+                <view class='point'></view>
+                <view class='xx_f_10 '>当天日程结束</view>
+            </view>
+        </view>
+    </view> 
+ </template> 

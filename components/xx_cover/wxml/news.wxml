@@ -1,0 +1,19 @@
+
+<template name="mode_news">
+    <view class='news'>
+        <block wx:for="{{list}}" wx:key="index">
+            <view  catchtap="click" data-index="{{index}}">  
+                <view class=' node'>
+                    <view class='left'>
+                        <view class='title'>{{item.title}}</view>
+                        <view class='time'>{{item.create_time}}</view>
+                    </view>
+                    <view class='cover'>
+                        <image src='{{item.cover_url}}'></image>
+                    </view>
+                </view>
+                <view class='line__gray' hidden="{{index == list.length-1}}"></view>
+            </view>
+        </block>
+    </view> 
+ </template> 

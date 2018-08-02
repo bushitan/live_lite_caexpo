@@ -1,0 +1,41 @@
+{
+    "pages":[
+        "pages/index/index",
+        "pages/small/small",
+        "pages/agenda/agenda",
+        "pages/edit/edit"
+    ],
+    "window": {
+        "backgroundTextStyle": "light",
+        "backgroundColor": "#FAFAFA",
+        "navigationBarBackgroundColor": "#FAFAFA",
+        "navigationBarTitleText": "东盟翻译官",
+        "navigationBarTextStyle": "black"
+    },
+    "plugins": {
+        "WechatSI": {
+        "version": "0.0.6",
+        "provider": "wx069ba97219f66d99"
+        }
+    },
+    "tabBar": {
+        "backgroundColor": "#fcfcfc",
+        "color": "#b3b3b3",
+        "selectedColor": "#212121",
+        "borderStyle": "white",
+        "list": [
+            {
+                "pagePath": "pages/index/index",
+                "text": "同声传译",
+                "iconPath": "images/info_unselect.png",
+                "selectedIconPath": "images/info_select.png"
+            },
+            {
+                "pagePath": "pages/agenda/agenda",
+                "text": "东盟博览",
+                "iconPath": "images/match_unselect1.png",
+                "selectedIconPath": "images/match_select1.png"
+            }
+        ]
+    }
+}

@@ -1,0 +1,31 @@
+.guest{
+    padding: 0 15px;
+    background-color: #fff;
+}
+.guest .node{
+     padding:  15px 0; 
+    display: flex;
+}
+
+.guest .logo{
+    margin-right:10px; 
+}
+.guest .logo image{
+    width: 75px;
+    height: 93px;
+    background-color: #ECECEC;
+}
+
+.guest .title{
+    font-size: 11pt;
+    color:  #151515;
+}
+
+.guest .summery{
+    font-size: 9pt;
+    color:  #878787;
+}
+.guest .line__gray{
+    content: "";
+    border-bottom: 1rpx #f0f0f0 solid;
+}

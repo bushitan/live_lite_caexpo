@@ -1,0 +1,31 @@
+<!-- 文章  嘉宾 --> 
+<!-- <view class='list '>
+    <block wx:for="{{list}}" >
+        <view class='node'  catchtap="click" data-index="{{index}}">
+            <view class='logo'  >
+                <image  src="{{item.cover_url}}" ></image>
+            </view>
+            <view>
+                <view class='title '>{{item.guest_name}}</view>
+                <view class='summery '>{{item.company}}</view>
+                <view class='summery '>{{item.introduction}}</view>
+            </view>
+        </view>
+        <view class='xx_line__gray' hidden="{{index == list.length-1}}"></view>
+    </block> 
+</view> -->
+
+<view wx:if="{{mode == MODE_AGENDA}}">
+    <import src="wxml/agenda.wxml"/>
+    <template is="mode_agenda" data="{{coverList: list }}" />  
+</view>
+
+<view wx:if="{{mode == MODE_GUEST}}">
+    <import src="wxml/guest.wxml"/>
+    <template is="mode_guest" data="{{list: list }}" />  
+</view>
+
+<view wx:if="{{mode == MODE_NEWS}}">
+    <import src="wxml/news.wxml"/>
+    <template is="mode_news" data="{{list: list }}" />  
+</view>
