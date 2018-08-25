@@ -1,5 +1,7 @@
 {
     "pages":[
+        "pages/ai/ai",
+        "pages/resualt/resualt",
         "pages/index/index",
         "pages/meet/meet",
         "pages/small/small",
