@@ -1,4 +1,12 @@
 
+// ,
+// {
+//     "pagePath": "pages/meet/meet",
+//         "text": "高峰论坛",
+//             "iconPath": "images/info_unselect.png",
+//                 "selectedIconPath": "images/info_select.png"
+// }
+
 var API = require('../../utils/api.js');
 var APP = getApp()
 var GP;
@@ -15,9 +23,9 @@ Page({
         ],
 
         mapSwiperList: [
-            "http://img.12xiong.top/caexpo_hc1.jpg",
-            "http://img.12xiong.top/caexpo_hc2.jpg",
-            "http://img.12xiong.top/caexpo_hc3.jpg",
+            "../../images/huichang1.jpg",
+            "../../images/huichang2.jpg",
+            "../../images/huichang3.jpg",
         ],
         latitude: '23.1066805',
         longitude: '113.3245904',

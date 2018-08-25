@@ -7,11 +7,7 @@
     </view>
     <template is="map" data="{{mapSwiperList}}"></template>
 
-    <view class='footer'>
-        <view>2018东盟博览会时间：2018年9月12日至15日</view>
-        <view>2018东盟博览会地点：中国广西南宁国际会展中心、广西展览馆</view>
-        <view>2018东盟博览会门票套票（博览会公众开放日门票、农业展门票各一张）价格为每套人民币60元，博览会农业展门票价格为每张人民币10元。</view>
-    </view>
+
     <!-- <view class='banner page__bg_white'>
         <view class='line'></view>
         <label>交通</label>
@@ -60,7 +56,7 @@
     
     <xx-navigte 
         icon="../../images/icon_location.png" 
-        title="会展中心导航" 
+        title="会展导航" 
         bindclick="toMap" >
     </xx-navigte>
 

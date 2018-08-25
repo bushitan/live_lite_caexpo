@@ -1,0 +1,14 @@
+
+
+
+<view class="xx_menu ">
+    <view catchtap="click" class="xx_menu__node " hover-class="xx_active" >
+        <view class="xx_menu__node_icon">
+            <!-- <image src="{{icon_meet}}"></image> -->
+            <image src="{{icon}}"></image>
+            
+        </view>
+        <view class="xx_menu__node_name">{{title}}</view>
+        <view class=" xx_menu__node_access xx_text__right"></view>
+    </view>
+</view>

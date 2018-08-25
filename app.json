@@ -1,14 +1,16 @@
 {
     "pages":[
         "pages/index/index",
+        "pages/meet/meet",
         "pages/small/small",
         "pages/agenda/agenda",
+        "pages/map/map",
         "pages/edit/edit"
     ],
     "window": {
         "backgroundTextStyle": "light",
         "backgroundColor": "#FAFAFA",
-        "navigationBarBackgroundColor": "#FAFAFA",
+        "navigationBarBackgroundColor": "#ffffff",
         "navigationBarTitleText": "东盟翻译官",
         "navigationBarTextStyle": "black"
     },
@@ -19,7 +21,7 @@
         }
     },
     "tabBar": {
-        "backgroundColor": "#fcfcfc",
+        "backgroundColor": "#ffffff",
         "color": "#b3b3b3",
         "selectedColor": "#212121",
         "borderStyle": "white",
@@ -32,7 +34,7 @@
             },
             {
                 "pagePath": "pages/agenda/agenda",
-                "text": "东盟博览",
+                "text": "东盟会展",
                 "iconPath": "images/info_unselect.png",
                 "selectedIconPath": "images/info_select.png"
             }

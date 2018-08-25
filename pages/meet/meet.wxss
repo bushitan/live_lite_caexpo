@@ -112,9 +112,3 @@ swiper image{
 }
 
 
-.footer{
-    padding: 15px;
-    font-size: 9pt;
-    color: #888;
-}
-.footer view{margin-bottom: 6px;}
