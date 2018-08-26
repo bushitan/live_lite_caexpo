@@ -29,16 +29,16 @@
         "borderStyle": "white",
         "list": [
             {
+                "pagePath": "pages/ai/ai",
+                "text": "米粉识别",
+                "iconPath": "images/info_unselect.png",
+                "selectedIconPath": "images/info_select.png"
+            },
+            {
                 "pagePath": "pages/index/index",
                 "text": "同声传译",
                 "iconPath": "images/index_unselect.png",
                 "selectedIconPath": "images/index_select.png"
-            },
-            {
-                "pagePath": "pages/agenda/agenda",
-                "text": "东盟会展",
-                "iconPath": "images/info_unselect.png",
-                "selectedIconPath": "images/info_select.png"
             }
         ]
     }

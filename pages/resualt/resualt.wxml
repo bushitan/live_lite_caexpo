@@ -1,2 +1,11 @@
-<!--pages/resualt/resualt.wxml-->
-<text>pages/resualt/resualt.wxml</text>
+
+<view class='xx_box'>
+    <view class='xx_image'>
+        <image src='{{phoneImage}}'></image>
+    </view>
+    <view class='des'>这是{{tagName}}</view>
+    <view class='des'>概率{{score}}%</view>
+    <view>
+        <button catchtap='toAI'>再次识别</button>
+    </view>
+</view>

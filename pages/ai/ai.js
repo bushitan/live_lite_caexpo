@@ -1,16 +1,19 @@
 // pages/ai/ai.js
 var GP
 var upng = require('../../utils/upng-js/UPNG.js')
+
 const canvasID = 'scannerCanvas'
-const ctx = wx.createCanvasContext(canvasID)
+var phone64 = ""
 Page({
 
     /**
      * 页面的初始数据
      */
     data: {
-        isPhone:!false,
-        phoneImage:"../../images/logo.jpg",
+        isPhone: true,
+        phoneImage: "../../images/logo.jpg",
+        tagName:"",
+        score:"",
     },
 
     /**
@@ -18,110 +21,83 @@ Page({
      */
     onLoad: function (options) {
         GP = this
-        GP._drawTarget()
-        // GP.baseStart()
+    },
+    onShow(){
+        GP.setData({
+            isPhone:true,
+        })
     },
 
+    toResualt(){
+        //TODO 把base数据存在storage里
+        wx.setStorageSync("ai", {
+            phoneImage: GP.data.phoneImage,
+            tagName: GP.data.tagName,
+            score: GP.data.score,
+        })
+        wx.navigateTo({
+            url: '/pages/resualt/resualt',
+        })
+    },
+
+
+    // 1 拍照
     takePhoto() {
-        // const ctx = wx.createCameraContext()
-        // ctx.takePhoto({
-        //     quality: 'high',
-        //     success: (res) => {
-        //         GP.setData({
-        //             phoneImage: res.tempImagePath
-        //         })
-        //         GP.easyDL()
-        //     }
-        // })
-        // GP.easyDL()
-        // GP.upload(12321,"biaoqingbao",0.56,)
-
-
-        //把图像数据获取
-        GP.baseStart()
-    },
-
-    easyDL(){
-        var access_token = "24.0b9c2684b508fce5e7094f5638632eb3.2592000.1537667288.282335-11721075"
-        wx.request({
-            url: 'https://aip.baidubce.com/rpc/2.0/ai_custom/v1/classification/emoji?access_token=' + access_token,
-            method:"POST",
-            header: {
-                'content-type': 'application/json'
-            },
-            data:{
-                image: imageBase64,
-                top_num:5,
-            },
+        const camera = wx.createCameraContext()
+        camera.takePhoto({
+            quality: 'high',
             success: (res) => {
-                console.log(res)
-                var log_id = res.data.log_id
-                var tag_name = res.data.results[0].name
-                var score = res.data.results[0].score
-                GP.upload(log_id, tag_name, score)
-
-                // GP.setData({
-                //     phoneImage: res.tempImagePath
-                // })
-                // GP.easyDL()
+               console.log(res)
+                GP.setData({
+                    phoneImage: res.tempImagePath,
+                    isPhone: false,
+                })
+                GP.drawTarget(res.tempImagePath)
             }
         })
     },
 
-    upload(log_id, tag_name, score){
-        wx.request({
-            url: 'http://ai.12xiong.top/lite/upload/image/',
-            method: "POST",
-            header: {
-                'content-type': 'application/x-www-form-urlencoded' // 默认值
-            },
-            data: {
-                base64: imageBase64,
-                log_id:log_id, 
-                tag_name:tag_name, 
-                score:score
-            },
-            success: (res) => {
-                console.log(res)
-            }
+    // 2 图片画图
+    drawTarget(tempImagePath) {
+        var canvas = wx.createCanvasContext(canvasID)
+        // 1. 绘制图片至canvas
+        canvas.drawImage(tempImagePath, 0, 0, 250, 300)
+        // 绘制完成后执行回调，API 1.7.0
+        canvas.draw(false, () => {
+            GP.imageToBase64()
         })
     },
 
+    // 3 开始base编码
+    imageToBase64() {
 
-    // 开始base编码
-    baseStart(){
+        wx.showLoading({
+            title: '识别中...',
+        })
         wx.canvasGetImageData({
             canvasId: canvasID,
             x: 0,
             y: 0,
             width: 250,
-            height:300,
+            height: 300,
             success(res) {
-                console.log(res)
-                let pngData = upng.encode([res.data.buffer], 250,300)
-                console.log(pngData)
-                // let platform = wx.getSystemInfoSync().platform
-                // if (platform == 'ios') {
-                //     // 兼容处理：ios获取的图片上下颠倒
-                //     res = that.reverseImgData(res)
-                // }
-                // resolve({
-                //     buffer: res.data.buffer,
-                //     width: res.width,
-                //     height: res.height
-                // })
+                let platform = wx.getSystemInfoSync().platform
+                if (platform == 'ios') {
+                    // 兼容处理：ios获取的图片上下颠倒
+                    res = that.reverseImgData(res)
+                }
+                let pngData = upng.encode([res.data.buffer], 250, 300)
+                let base64 = wx.arrayBufferToBase64(pngData)
+                phone64 = base64
+                GP.easyDL()  //获取百度对比结果
             },
             fail(res) {
                 console.log(res)
-                // reject({
-                //     code: 1,
-                //     reason: '读取图片数据失败'
-                // })
             }
         })
     },
 
-    // 2 IOS 图片倒置
+    // 3.1 IOS 图片倒置
     reverseImgData(res) {
         var w = res.width
         var h = res.height
@@ -136,35 +112,69 @@ Page({
         return res
     },
 
-    //3 png转base64
-    _toPNGBase64(buffer, width, height) {
 
-        let pngData = upng.encode([buffer], width, height)
-        resolve(wx.arrayBufferToBase64(pngData))
-         
+    // 百度分析
+    easyDL(){
+
+        var access_token = "24.0b9c2684b508fce5e7094f5638632eb3.2592000.1537667288.282335-11721075"
+        console.log("phone64:", phone64.length)
+        wx.request({
+            url: 'https://aip.baidubce.com/rpc/2.0/ai_custom/v1/classification/emoji?access_token=' + access_token,
+            method:"POST",
+            header: {
+                'content-type': 'application/json'
+            },
+            data: {
+                image: phone64,         
+                top_num:5,
+            },
+            success: (res) => {
+                console.log(res)
+                var log_id = res.data.log_id
+                var tag_name = res.data.results[0].name
+                var score = res.data.results[0].score
+
+                //图片记录上传后台
+                GP.upload(log_id, tag_name, score)
+                wx.hideLoading()
+
+                // 设置分数
+                GP.setData({
+                    tagName : res.data.results[0].name,
+                    score : res.data.results[0].score,
+                })
+
+                //跳转至结果
+                GP.toResualt()
+
+            },
+            fail:(res)=>{
+                console.log(res)
+            },
+        })
     },
 
-    //4 画 图片
-    _drawTarget() {
+    // 后台保存
+    upload(log_id, tag_name, score){
+        wx.request({
+            url: 'https://ai.12xiong.top/lite/upload/image/',
+            method: "POST",
+            header: {
+                'content-type': 'application/x-www-form-urlencoded' // 默认值
+            },
+            data: {
+                base64: phone64,                
+                log_id:log_id, 
+                tag_name:tag_name, 
+                score:score
+            },
+            success: (res) => {
+                console.log(res)
+            }
+        })
+    },
 
-        // const canvasID = 'scannerCanvas'
-        // const ctx = wx.createCanvasContext(canvasID)
-        // wx.chooseImage({
-        //     success: function (res) {
-        //         ctx.drawImage(res.tempFilePaths[0], 0, 0, 150, 100)
-        //         ctx.draw()
-        //     }
-        // })
+    onShareAppMessage(){},
 
-
-        ctx.drawImage(GP.data.phoneImage, 0, 0, 250, 300)
-        ctx.draw()
-
-        // this.finishDraw = false
-        // var path = GP.data.
-        // this.canvas.drawImage(, this.target.left, this.target.top, this.target.width, this.target.height)
-        // this.canvas.draw(false, () => {
-        //     that.finishDraw = true
-        // })
-    }
 })
+

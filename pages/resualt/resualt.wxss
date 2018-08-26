@@ -1,1 +1,23 @@
 /* pages/resualt/resualt.wxss */
+
+.xx_box{
+    padding: 15px;
+}
+.xx_image{
+    display: flex;
+    justify-content: center;
+}
+image{
+    width: 250px;
+    height: 300px;
+}
+
+.des{
+    margin-top: 15px;
+    font-size: 14pt;
+    text-align: center;
+}
+button{
+    margin-top: 15px;
+    font-size: 11pt;
+}
