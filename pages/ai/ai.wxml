@@ -8,7 +8,8 @@
     <canvas class="camera" canvas-id='scannerCanvas' ></canvas>
     </view>
     <view class='btn' >
-        <button type='primary' bindtap="takePhoto">识别</button>
+        <button type='primary' bindtap="takePhoto" disabled='{{!isPhone}}'>识别粉</button>
+        <!-- <button type='primary' bindtap="dish">识别</button> -->
     </view>
 </view>
 

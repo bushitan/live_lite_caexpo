@@ -16,9 +16,10 @@ Page({
     onLoad: function (options) {
         GP = this
         var ai = wx.getStorageSync("ai")
+        var tagName = ai.tagName == "非菜" ? "这不是菜！" : ai.tagName
         GP.setData({
             phoneImage:ai.phoneImage,
-            tagName: ai.tagName,
+            tagName: tagName,
             score: parseInt(ai.score*100),
         })
     },
