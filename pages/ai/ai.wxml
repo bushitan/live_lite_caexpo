@@ -1,14 +1,31 @@
 
 <view class='xx_box'>
+
      <view  class='camera_box  {{isPhone==false?"camera_canvas":""}}'>
-        <camera class="camera" ></camera> 
+        <camera class="camera" >
+            <cover-image class='camera_cover' catchtap='takePhoto' src='../../images/cover.png'></cover-image>
+        </camera> 
     </view> 
     <!-- <image class="camera" src='{{phoneImage}}' wx:else></image> -->
     <view  class='camera_box {{isPhone==true?"camera_canvas":""}}'>
-    <canvas class="camera" canvas-id='scannerCanvas' ></canvas>
+        <canvas class="camera" canvas-id='scannerCanvas' >
+            <cover-image class='camera_cover' catchtap='takePhoto' src='../../images/cover.png'></cover-image>
+        </canvas>
+        <!-- <image class='canvas_cover'  src='../../images/cover.png'></image> -->
     </view>
+
+    <view class='mm'>
+        <image src='../../images/suofenmei.png'>
+           <image class='sf_word' src='../../images/sf_word.gif'></image>
+        </image>
+    </view>
+    <view class='footer'>我是嗦粉妹，天天要嗦粉</view>
+    <view class='footer'>你拍一碗粉给我嗦，我给你福利</view>
+    <view class='footer'>(点摄像头就能拍照啦)</view>
+
+    
     <view class='btn' >
-        <button type='primary' bindtap="takePhoto" disabled='{{!isPhone}}'>识别粉</button>
+        <!-- <button type='primary' bindtap="takePhoto" disabled='{{!isPhone}}'>识别粉</button> -->
         <!-- <button type='primary' bindtap="dish">识别</button> -->
     </view>
 </view>

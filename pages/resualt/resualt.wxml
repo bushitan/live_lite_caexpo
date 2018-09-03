@@ -1,7 +1,9 @@
 
 <view class='xx_box'>
     <view class='xx_image'>
-        <image src='{{phoneImage}}'></image>
+        <image class='org' src='{{phoneImage}}'>
+        </image>
+            <image class='wan'  src='../../images/cover.png'></image>
     </view>
     <view class='des'>这是{{tagName}}</view>
     <view class='des'>概率{{score}}%</view>

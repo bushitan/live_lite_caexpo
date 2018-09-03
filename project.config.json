@@ -11,7 +11,7 @@
 		"newFeature": true
 	},
 	"compileType": "miniprogram",
-	"libVersion": "1.9.98",
+	"libVersion": "2.2.5",
 	"appid": "wxeb9623bdc85a64f4",
 	"projectname": "%E4%B8%9C%E7%9B%9F%E7%BF%BB%E8%AF%91%E5%AE%98",
 	"isGameTourist": false,
@@ -33,13 +33,24 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": -1,
+			"current": 2,
 			"list": [
 				{
 					"id": -1,
 					"name": "agenda",
 					"pathName": "pages/agenda/agenda",
 					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "ai",
+					"pathName": "pages/ai/ai",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "resualt",
+					"pathName": "pages/resualt/resualt"
 				}
 			]
 		}

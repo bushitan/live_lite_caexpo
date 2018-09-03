@@ -61,7 +61,7 @@ Page({
     drawTarget(tempImagePath) {
         var canvas = wx.createCanvasContext(canvasID)
         // 1. 绘制图片至canvas
-        canvas.drawImage(tempImagePath, 0, 0, 250, 300)
+        canvas.drawImage(tempImagePath, 0, 0, 250, 250)
         // 绘制完成后执行回调，API 1.7.0
         canvas.draw(false, () => {
             GP.imageToBase64()
@@ -79,14 +79,14 @@ Page({
             x: 0,
             y: 0,
             width: 250,
-            height: 300,
+            height: 250,
             success(res) {
                 let platform = wx.getSystemInfoSync().platform
                 if (platform == 'ios') {
                     // 兼容处理：ios获取的图片上下颠倒
                     res = that.reverseImgData(res)
                 }
-                let pngData = upng.encode([res.data.buffer], 250, 300)
+                let pngData = upng.encode([res.data.buffer], 250, 250)
                 let base64 = wx.arrayBufferToBase64(pngData)
                 phone64 = base64
                 // GP.easyDL()  //获取百度对比结果
@@ -128,8 +128,8 @@ Page({
             },
 
             data: {
-                image: temp,
-                // image: phone64,         
+                // image: temp,
+                image: phone64,         
                 top_num: 5,
                 filter_threshold: 0.95,
                 baike_num: 0,
@@ -230,7 +230,11 @@ Page({
         })
     },
 
-    onShareAppMessage(){},
+    onShareAppMessage(){
+        return {
+            imageUrl:"../../images/share.jpg",
+        }
+    },
 
 })
 

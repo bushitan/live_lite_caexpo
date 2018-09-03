@@ -11,12 +11,12 @@
   position:relative;
   font-family: "PingFang-SC-Regular","SimSun","Microsoft Yahei";
   font-variant-ligatures: none;
-  background-color: #FAFAFA;
+  /* background-color: #FAFAFA; */
 }
 page {
   height: 100%;
   width: 100%;
-  background: #FAFAFA;
+  /* background: #FAFAFA; */
 }
 
 input {

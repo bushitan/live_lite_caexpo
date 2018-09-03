@@ -6,10 +6,20 @@
 .xx_image{
     display: flex;
     justify-content: center;
+    position: relative;
+    margin-top:30px
 }
-image{
+.org{
+    /* position: absolute;
+    top: 0; */
     width: 250px;
-    height: 300px;
+    height: 250px;
+}
+.wan{
+    position: absolute;
+    top: -2px;
+    width: 254px;
+    height: 254px;
 }
 
 .des{
@@ -18,6 +28,6 @@ image{
     text-align: center;
 }
 button{
-    margin-top: 15px;
-    font-size: 11pt;
+    margin-top: 25px;
+    /* font-size: 11pt; */
 }
