@@ -1,0 +1,124 @@
+/* pages/ai/ai.wxss */
+.xx_box{
+    /* padding:5px 30px 30px; */
+}
+
+.mm{
+    /* position: fixed;
+    bottom: 20px;
+    width: 100%; */
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin-top: 25px;
+    margin-bottom: 10px;
+}
+.mm image{
+    width: 144px;
+    height:144px;
+    border-radius: 50%;
+    
+}
+.sf_word{
+    position: absolute;
+    top:0;
+    /* left: 0; */
+}
+
+.camera_box{
+    display: flex;
+    justify-content: center;
+    margin-top:30px;
+    border-radius: 10px;
+}
+.camera_canvas{
+    position: absolute;
+    top: -1000px;
+}
+/* .camera{
+    display: block !important;
+    width:350px !important;
+    height: 350px;
+}
+.camera_cover{
+    width:350px !important;
+    height: 350px;
+}
+.canvas_cover{
+    position: absolute;
+    
+    width: 250px;  
+    height: 250px;
+} */
+.btn{
+    padding: 15px;
+}
+.btn_comfirm{
+    display: flex;
+    justify-content: space-around;
+    padding: 15px 0;
+}
+
+.footer{
+    font-size: 10pt;
+    text-align: center;
+}
+
+
+.xx_btn{
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.mode{
+    color: #fff;
+    display: flex;
+     justify-content: space-around; 
+    align-content: center;
+    text-align: center;
+    border-radius: 50%;
+    
+}
+.mode_bg_center{
+    width: 70px;
+    height: 70px;
+    margin: 0 40px;
+    background-color: #eeede8;
+    box-shadow:0px 1px 1px #828282 inset;
+}
+.mode .node{
+    margin: auto;
+     line-height: 58px;
+    font-size: 17pt;
+     overflow:hidden;    
+     width: 58px;
+    height: 58px; 
+    /* color: #ec563e; */
+    
+    background-color: #fff;
+    border-radius: 50%;
+    box-shadow:0px 1px 1px #828282;
+    font-weight: bold;
+}
+.mode .image{
+    width: 100%;
+    height:100%;
+}
+
+.level_color_1{
+    color: #8a8a8a;
+}
+
+.click {
+    background-color: #eee !important;
+}
+
+.footer{
+    position: fixed;
+    bottom: 20px;
+    width: 100%;
+    text-align: center;
+    font-size: 9pt;
+    color: #8e8e8e;
+}

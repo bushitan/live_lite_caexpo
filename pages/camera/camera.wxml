@@ -1,0 +1,28 @@
+
+<view class='xx_box'>
+
+     <view  class='camera_box  {{isPhone==false?"camera_canvas":""}}'>
+        <camera class="camera" style=' width: {{sizeWidth}}px;height: {{sizeWidth}}px;' >
+            <cover-image  style=' width: {{sizeWidth}}px;height: {{sizeWidth}}px;'  catchtap='takePhoto' src='../../images/cover_bowl.png'></cover-image>
+        </camera> 
+    </view> 
+    <view  class='camera_box {{isPhone==true?"camera_canvas":""}}'>
+        <canvas  canvas-id='scannerCanvas' style=' width: {{sizeWidth}}px;height: {{sizeWidth}}px;' >        </canvas>
+    </view>
+
+
+
+    <view class='xx_btn'>
+        <view class='mode mode_bg_center' catchtap='takePhoto'>
+            <view class='node level_color_1'  
+                hover-class="click" 
+                wx:if="{{currentLevel == STRANGER}}">
+                    <!-- 嗦 -->
+                <image class='image'  src='../../images/camera.png'></image>
+            </view>
+        </view>
+    </view>
+
+    <view class='footer'>中国嗦粉研究中心</view>
+</view>
+

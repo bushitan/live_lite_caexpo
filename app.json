@@ -1,5 +1,8 @@
 {
     "pages":[
+        "pages/camera/camera",
+
+        
         "pages/ai/ai",
         "pages/resualt/resualt",
         "pages/index/index",

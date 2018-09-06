@@ -6,8 +6,8 @@ Page({
      * 页面的初始数据
      */
     data: {
-        phoneImage:"../../images/logo.jpg", 
-        tagName:"螺蛳粉",   
+        phoneImage:"../../images/info_unselect.png", 
+        tagName:"",   
     },
 
     /**
@@ -16,7 +16,16 @@ Page({
     onLoad: function (options) {
         GP = this
         var ai = wx.getStorageSync("ai")
-        var tagName = ai.tagName == "非菜" ? "这不是菜！" : ai.tagName
+        var tagName
+        if (ai.tagName == "非菜") tagName = "这不是粉啊！"
+        else if (ai.indexOf("面") != -1) tagName = "有面T_T，好难嗦！"
+        else if (ai.indexOf("粉") != -1) tagName = ai.tagName + ",嗦粉好嗨森^_^！"
+        else  tagName = "我也不懂这是啥！"
+
+
+
+
+        var tagName = ai.tagName == "非菜" ? "这不是粉啊！" : ai.tagName
         GP.setData({
             phoneImage:ai.phoneImage,
             tagName: tagName,

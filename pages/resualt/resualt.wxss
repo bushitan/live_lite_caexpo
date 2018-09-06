@@ -1,33 +1,46 @@
 /* pages/resualt/resualt.wxss */
 
 .xx_box{
-    padding: 15px;
+    padding: 0 15px 15px;
 }
+.xx_card{
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow:0px 0px 10px #ddd;
+}
+
 .xx_image{
     display: flex;
     justify-content: center;
     position: relative;
-    margin-top:30px
+    margin-top:30px;
+    /* background-color: #eee; */
 }
 .org{
     /* position: absolute;
     top: 0; */
-    width: 250px;
-    height: 250px;
-}
-.wan{
-    position: absolute;
-    top: -2px;
-    width: 254px;
-    height: 254px;
-}
-
-.des{
-    margin-top: 15px;
-    font-size: 14pt;
-    text-align: center;
+    width: 100%;
+    /* height: 250px; */
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
 }
 button{
     margin-top: 25px;
     /* font-size: 11pt; */
+}
+
+.sf{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 13pt;
+}
+.sf image{
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    box-shadow:0px 0px 10px #828282;
+}
+.sf label{
+    margin-left:5px;
 }

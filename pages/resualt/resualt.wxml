@@ -1,12 +1,17 @@
 
 <view class='xx_box'>
-    <view class='xx_image'>
-        <image class='org' src='{{phoneImage}}'>
-        </image>
-            <image class='wan'  src='../../images/cover.png'></image>
+    <view class='xx_card'>
+        <view class='xx_image'>
+            <image class='org' src='{{phoneImage}}' mode='widthFix'></image>
+        </view>
+
+        <view style='height:15px'></view>
+        <view class='sf'>
+            <image   src='../../images/sf.png'></image>
+            <label>{{tagName}}</label>          
+        </view>
+        <view style='height:15px'></view>
     </view>
-    <view class='des'>这是{{tagName}}</view>
-    <view class='des'>概率{{score}}%</view>
     <view>
         <button catchtap='toAI'>再次识别</button>
     </view>
